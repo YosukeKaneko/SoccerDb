@@ -10,12 +10,12 @@ Listen #port-num
    </Directory>
 </VirtualHost>
 
-2.dbはmysqlを使用しています下記のファイルがsqlダンプです
+2.dbはmysqlを使用しています。下記ファイルがsqlダンプです<br>
 soccerdb_2017-03-21.sql
 
-3.下記のファイルでdb名及びユーザー名、パスワードを設定して下さい(分散していて申し訳ございません）
-sooccerDb/SoccerDbApplication.php
-sooccerDb/web/teams.php
-sooccerDb/web/player.php
+3.下記のファイルでdb名及びユーザー名、パスワードを設定して下さい(分散していて申し訳ございません）<br>
+sooccerDb/SoccerDbApplication.php<br>
+sooccerDb/web/teams.php<br>
+sooccerDb/web/player.php<br>
 
 以上で設定は終了です
