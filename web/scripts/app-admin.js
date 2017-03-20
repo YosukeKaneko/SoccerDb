@@ -27,7 +27,7 @@ $('#playerAdd').on('click', function(){
 
 var Task = Backbone.Model.extend({    
     url: function (){
-      return this.id ? "teamss.php?id="+this.id : "teams.php";
+      return this.id ? "teams.php?id="+this.id : "teams.php";
     },
     defaults: { 
       done: 0,
