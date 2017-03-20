@@ -1,6 +1,7 @@
 # SoccerDb
 1.ローカルサーバを立てて、/webをルートディレクトリとルートドキュメントに設定して下さい
 ex.apacheでバーチャルホスト設定の場合
+
 Listen #port-num
 <VirtualHost *:#port-num>
    DocumentRoot "/#write-your-directory/soccerDb/web"
