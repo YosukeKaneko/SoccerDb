@@ -17,9 +17,10 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<!-- left side -->
 			<ul class="nav navbar-nav">
-				<li><a href="<?php echo $base_url;?>/">home</a></li>
 				<?php if ($session->isAuthenticated()): ?>
 					<li><a href="<?php echo $base_url; ?>/admin">admin</a></li>
+				<?php else: ?>
+					<li><a href="<?php echo $base_url;?>/">home</a></li>
 				<?php endif; ?>
 				
 			</ul>

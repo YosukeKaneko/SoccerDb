@@ -127,7 +127,7 @@ var TaskView = Backbone.View.extend({
     },
     'click .selectTeam': function(){
       $('#teamId').val(this.model.id);
-      $('#selectedTeam').html('Editting: '+this.model.attributes.title);
+      $('#selectedTeam').html('Viewing: '+this.model.attributes.title);
       var getmethodurl = '/player.php?id='+this.model.id;
       players.seturl(getmethodurl);
       players.fetch();

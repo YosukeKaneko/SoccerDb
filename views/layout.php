@@ -23,7 +23,7 @@
     <?php if ($session->isAuthenticated()): ?>
     <script type=text/javascript src="scripts/app-admin.js"></script>
 	<?php else: ?>
-    <script type=text/javascript src="scripts/app.js"></script>
+    <script type=text/javascript src="scripts/app-admin.js"></script>
 	<?php endif; ?>
 </body>
 </html>
