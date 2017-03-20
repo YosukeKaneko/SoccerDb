@@ -40,7 +40,7 @@ $('#playerAdd').on('click', function(){
 
 var Task = Backbone.Model.extend({    
     url: function (){
-      return this.id ? "tasks.php?id="+this.id : "tasks.php";
+      return this.id ? "teamss.php?id="+this.id : "teams.php";
     },
     defaults: { 
       done: 0,
@@ -78,7 +78,7 @@ var Player = Backbone.Model.extend({
 
 var Tasks = Backbone.Collection.extend({
   model: Task,
-  url: 'tasks.php'
+  url: 'teams.php'
 });
 var Players = Backbone.Collection.extend({
   model: Player,
