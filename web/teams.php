@@ -16,12 +16,6 @@
 		$result['id'] = $db->lastInsertId();
 		echo json_encode($result);
 	}
-
-	// if ($_SERVER['REQUEST_METHOD'] == "PUT"){
-	// 	$sql = "UPDATE teams SET done = :done WHERE id = :id";
-	// 	$query = $db->prepare($sql);
-	// 	$query->execute(array(":done"=>$data->done, ":id"=>$data->id));
-	// }
 	
 	if ($_SERVER['REQUEST_METHOD'] == "DELETE"){
 		$sql = "DELETE FROM teams WHERE id = :id";

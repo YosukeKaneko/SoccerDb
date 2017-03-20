@@ -1,38 +1,25 @@
-
-
-  // $('#addTeam').on('click', function(){
-  //   var title = $('#title').val();
-  //   var task = new Task;
-  //   if (task.set({title: title}, {validate: true})) {
-  //       task.save();
-  //       tasks.add(task);
-  //       $('#error').empty();
-  //   };
-  // })
-
 $('#addTeam').on('click', function(){
   var title = $('#title').val();
   var task = new Task;
   if (task.set({title: title}, {validate: true})) {
-      task.save()
+      task.save();
       tasks.add(task);
       $('#error').empty();
-      $('#title').val('')
+      $('#title').val('');
   };
 });
 $('#playerAdd').on('click', function(){
   var teamId = $('#teamId').val();
   var playerName = $('#playerName').val();
-  console.log(playerName);
-  console.log(teamId);
   var player = new Player();
   if (player.set({teamId: teamId, playerName: playerName}, {validate: true})) {
-    player.save();
-    // players.add(player);
-    console.log(players.url);
-    $('#playerError').empty();
-    $('#playerName').val('');
-    players.fetch();
+    $.when(
+      player.save()
+    ).done(function(){ 
+      $('#playerError').empty();
+      $('#playerName').val('');
+      players.fetch();
+    });
   }
 })
 
@@ -139,9 +126,7 @@ var TaskView = Backbone.View.extend({
       tasks.remove(this.model)
     },
     'click .selectTeam': function(){
-      // console.log(this.model.id);
       $('#teamId').val(this.model.id);
-      console.log(this.model.attributes.title);
       $('#selectedTeam').html('Editting: '+this.model.attributes.title);
       var getmethodurl = '/player.php?id='+this.model.id;
       players.seturl(getmethodurl);
@@ -159,7 +144,6 @@ var PlayerView = Backbone.View.extend({
     'click .delete-player': function(){
       var deleteurl = '/player.php?id='+this.model.id;
       this.model.changeurl(deleteurl);
-      console.log(this.model.url);
       players.remove(this.model, deleteurl);
     },
   },
